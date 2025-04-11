@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*O asterisco (*) no CSS é um seletor universal.
+Ele é usado para selecionar todos os elementos de um documento HTML.
+Isso pode ser útil quando você deseja aplicar um estilo global a todos os elementos da página.*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.carousel-item {
+    min-width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.3);
+}
+
+.carousel-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+.carousel.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel.button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel.button.prev {
+    left: 20px;
+}
+
+.carousel.button.next {
+    right: 20px;
+}
+
+.carousel.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transform: background-color 0,3s;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 250px;
+        height: 250px;
+    }
+    
+}
